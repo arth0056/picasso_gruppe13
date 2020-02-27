@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Galleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Raleway&display=swap" rel="stylesheet">
+
+    <style>
+        img {
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+            /*            margin: 0;*/
+        }
+
+        main_wrapper {
+            position: absolute;
+            top: 7rem;
+            margin: 1rem;
+        }
+
+
+        #popup h1 {
+            font-family: 'caveat';
+
+        }
+
+        #popup button {
+            font-family: sans-serif;
+        }
+
+
+
+        /*--------------------header-------------------------*/
+
+        header {
+            position: fixed;
+
+            display: flex;
+            align-items: center;
+
+            margin: 0;
+            top: 0;
+
+            width: 100%;
+            height: 7rem;
+            background-color: white;
+        }
+
+
+        .xtra_space {
+            height: 7rem;
+        }
+
+
+        #logo {
+            background-image: url(logo/logo_final.svg);
+            background-size: contain;
+            height: 7rem;
+
+            cursor: pointer;
+            background-repeat: no-repeat;
+
+        }
+
+        .logo_container {
+            display: flex;
+            max-width: 1000px;
+            justify-content: flex-start;
+            margin: 0 auto;
+        }
+
+
+
+
+        nav {
+            padding-top: 4rem;
+            padding-right: 1rem;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+        }
+
+        /*
+        .valgt {
+        border-bottom: solid 4px rgba(155, 0, 0, 0.65);
+        border-radius: 1%;
+
+        }
+*/
+
+        button {
+            font-family: 'Caveat';
+
+            font-size: 1.4rem;
+            margin: 7px;
+            border-radius: 7%;
+            border-style: hidden;
+            background-color: transparent;
+            cursor: pointer;
+
+        }
+
+
+        /*------------------header slut---------------*/
+
+        #main_wrapper img {
+            width: 100%;
+            justify-content: center;
+            object-fit: cover;
+            height: 255px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 4px;
+        }
+
+        p {
+
+            color: #606060;
+        }
+
+        /*--------------burgermenu start-----------*/
+
+        #burgerknap {
+            background-image: url(burger/burger.svg);
+            background-size: cover;
+            height: 2rem;
+            width: 2rem;
+            position: absolute;
+            z-index: 1;
+            right: 1rem;
+            top: 1.7rem;
+            margin-right: 1rem;
+
+
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        #filter_desktop {
+            visibility: hidden;
+        }
+
+
+
+        #filter_mobile {}
+
+        .open {
+            animation-name: open_kf;
+            animation-duration: 0.1s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes open_kf {
+            100% {
+                background-image: url(burger/cross.svg);
+            }
+        }
+
+        .closed {
+            animation-name: close_kf;
+            animation-duration: 0.1s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes close_kf {
+            0% {
+                background-image: url(burger/cross.svg);
+            }
+
+            100% {
+                background-image: url(burger/burger.svg);
+            }
+        }
+
+
+
+        /*-----------------------burgermenu slut----------------------*/
+
+
+
+
+        .data-container {
+
+            /*            display: flex;*/
+
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-flow: dense;
+
+            grid-gap: 40px;
+
+            margin: 0 auto;
+            margin-top: 4vw;
+            max-width: 1000px;
+        }
+
+
+
+        .tik {}
+
+
+
+
+
+
+
+
+
+
+        /*------------popup start------------------*/
+
+
+        #popup {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            color: #000000;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.47);
+            overflow: scroll;
+
+            z-index: 1;
+
+        }
+
+        #popup h1 {
+            font-size: 1.7rem;
+            text-align: left;
+        }
+
+
+
+        .skjul {
+            visibility: hidden;
+        }
+
+
+        #popup button {
+            font-size: 1rem;
+            z-index: 2;
+            color: black;
+            background-color: transparent;
+            position: fixed;
+            right: .2rem;
+            top: 1.5rem;
+            border-style: none;
+            cursor: pointer;
+        }
+
+        #eachMuse_popup {
+
+            pointer-events: none;
+
+
+            margin: .5rem;
+            padding: .5rem;
+
+            position: fixed;
+            top: 1rem;
+            background-color: white;
+
+            width: 95vw;
+            margin: 0 auto;
+        }
+
+        #eachMuse_popup h1 {}
+
+
+        /*        popup slut*/
+
+
+
+
+        /*----------------media query KUN til mobile-------------------------*/
+
+        @media only screen and (max-width: 400px) {
+
+
+
+
+            .logo_container {
+                margin: 1vw;
+            }
+
+            #logo {
+                height: 5.4rem;
+                width: 5.4rem;
+            }
+
+            nav {
+
+                background-color: whitesmoke;
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                right: 0;
+            }
+
+            .data-container article:nth-child(2n + 2) {
+                margin-top: 7vw;
+
+            }
+
+            #main_wrapper img {
+                height: 174px;
+            }
+
+            header {
+                align-items: flex-start;
+            }
+
+        }
+
+        /*---------------------------media query til tablet----------------------------*/
+
+        @media only screen and (min-width: 400px) {
+
+
+
+            #eachMuse_popup {
+                width: 60vw;
+
+            }
+
+            #popup {
+                display: flex;
+                justify-content: center;
+            }
+
+            #popup button {
+                right: 20vw;
+
+            }
+
+            nav {
+
+                background-color: whitesmoke;
+                position: fixed;
+                width: 47vw;
+                height: 100vh;
+                top: 0;
+                right: 0;
+
+            }
+
+
+            .logo_container {
+                align-content: flex-start;
+                width: 100%;
+            }
+
+
+            #logo {
+                height: 6.4rem;
+                width: 6.4rem;
+
+
+            }
+
+            #main_wrapper img {
+                height: 147px;
+                object-position: 50% 0%;
+            }
+
+            .data-container {
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .data-container article:nth-child(3n + 2) {
+                margin-top: 4vw;
+
+            }
+
+
+        }
+
+        /*--------------------media query til big shit---------------------------*/
+
+
+
+        @media only screen and (min-width: 800px) {
+
+
+
+            #eachMuse_popup {
+                width: 24vw;
+
+                flex-direction: column;
+
+
+
+
+            }
+
+            #eachMuse_popup img {}
+
+            #popup button {
+                right: 36vw;
+            }
+
+            /*^^^^^^^^^^^^^^^^^^   POPUP^^^^^^^^*/
+
+
+            .xtra_space {
+                height: 2rem;
+            }
+
+            button {
+                font-size: 1.7rem;
+            }
+
+            #filter_desktop {
+                visibility: visible;
+                background-color: transparent;
+                display: flex;
+                flex-direction: row;
+                flex: none;
+            }
+
+            #burgerknap {
+                visibility: hidden;
+            }
+
+
+            header {
+                max-width: 1000px;
+                margin: 0 auto;
+                position: sticky;
+            }
+
+
+
+            .logo-container {
+
+                width: 1000px;
+                margin: 0 auto;
+
+            }
+
+
+            nav {
+
+                right: 1rem;
+                padding-top: .74rem;
+
+            }
+
+            #main_wrapper img {
+                height: 255px;
+            }
+
+
+            .data-container article:nth-child(3n + 2) {
+                margin-top: 0vw;
+
+            }
+
+            .data-container {
+
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .data-container article:nth-child(4n + 2) {
+
+                margin-top: 4vw;
+            }
+
+            .data-container article:nth-child(4n + 4) {
+
+                margin-top: 4vw;
+            }
+
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <div class="logo_container">
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
+        </div>
+
+
+
+        <h1></h1>
+
+        <div id="burgerknap">
+
+        </div>
+
+        <nav id="filter_mobile" class="hidden">
+
+
+            <button class="filter underlined_link" data-mus="alle"> <a href="galleri.html"> Galleri</a> </button>
+            <button class="filter" data-mus="olga"><a href="olga.html">Olga</a></button>
+            <button class="filter" data-mus="jacqueline"><a href="jacqueline.html">Jacqueline</a></button>
+            <button class="filter" data-mus="doramaar"><a href="dora.html"> Dora </a></button>
+            <button class="filter" data-mus="francoise"><a href="francoise.html"> Francoise </a></button>
+            <button class="filter" data-mus="marietherese"><a href="marietherese.html">Marie-Therese</a></button>
+
+        </nav>
+
+        <div id="filter_desktop" class="hidden2">
+
+
+            <button class="filter underlined_link" data-mus="alle"> <a href="galleri.html"> Galleri</a> </button>
+            <button class="filter" data-mus="olga"><a href="olga.html">Olga</a></button>
+            <button class="filter" data-mus="jacqueline"><a href="jacqueline.html">Jacqueline</a></button>
+            <button class="filter" data-mus="doramaar"><a href="dora.html"> Dora </a></button>
+            <button class="filter" data-mus="francoise"><a href="francoise.html"> Francoise </a></button>
+            <button class="filter" data-mus="marietherese"><a href="marietherese.html">Marie-Therese</a></button>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="xtra_space">
+
+    </div>
+
+
+    <section id="popup" class="skjul">
+        <button>X</button>
+        <article id="eachMuse_popup">
+            <h1></h1>
+
+            <img src="">
+
+            <p></p>
+
+
+        </article>
+    </section>
+
+    <div id="main_wrapper">
+
+
+
+
+        <div id="outer_container">
+            <section class="data-container"> </section>
+        </div>
+
+        <template>
+            <article class="tik">
+                <img src="" alt="">
+            </article>
+
+        </template>
+
+    </div>
+
+    <footer>
+
+        <p id="footer_txt">
+
+        </p>
+
+
+    </footer>
+
+
+
+    <script>
+        let personer = [];
+        const googleData = "https://spreadsheets.google.com/feeds/list/13kjSiYnNHiUNoKXbuB1oO7nbL1k3Zawd7irhZpyQuBQ/od6/public/values?alt=json";
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", startUp);
+        const detalje_popup = document.querySelector("#popup");
+
+
+
+
+
+
+
+
+        //        starter henter googledata  og sætter eventlistenere på buttons
+
+
+        function startUp() {
+            hentData();
+            knapper();
+
+
+        }
+
+
+
+        //            henter data fra google sheet, venter på respons før den går til visTing();
+
+        async function hentData() {
+
+            const response = await fetch(googleData);
+            console.log(response);
+            personer = await response.json();
+            console.log(personer);
+            visTing();
+
+        }
+
+
+        //        tilføjer eventlistener til knapper en ad gangen
+
+        function knapper() {
+            document.querySelector("#burgerknap").addEventListener("click", clickMenu);
+            document.querySelectorAll(".filter").forEach(elm_knap1 => {
+                elm_knap1.addEventListener("click", filtering);
+            })
+        }
+
+
+
+        //        burger menu
+
+
+        function clickMenu() {
+            document.querySelector("#filter_mobile").classList.toggle("hidden");
+
+            if (document.querySelector("#burgerknap").classList.contains("open")) {
+                document.querySelector("#burgerknap").classList = "closed";
+            } else {
+                document.querySelector("#burgerknap").classList = "open";
+            }
+        }
+
+
+
+
+        function filtering() {
+
+            //            sætter "filter" variablen til den trykkede knaps data-* "value"
+
+            filter = this.dataset.mus;
+
+            //            fjerner ".valgt" style fra forrige knap
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+
+            //            tilføjer ".valgt" style til den trykkede knap
+
+            this.classList.add("valgt");
+
+            //            kalder visTing() funktionen og printer den trykkede knaps navn i h1
+
+            visTing();
+
+            //            document.querySelector("h1").textContent = this.textContent;
+        }
+
+
+
+        function visTing() {
+            console.log("VIS ting");
+
+            const container = document.querySelector(".data-container");
+            const imgTemplate = document.querySelector("template");
+
+
+            container.innerHTML = "";
+
+            personer.feed.entry.forEach(ting => {
+
+                //               mener der skal stå -> if (filter == "alle" || filter == ting.gsx$navn.$t) <- for at filtrere efter spreadsheet kategorien navn
+
+                if (filter == "alle" || filter == ting.gsx$kategori.$t) {
+
+                    console.log("hej");
+
+                    let klon = imgTemplate.cloneNode(true).content;
+
+
+                    klon.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+                    klon.querySelector("img").alt = "Billede af " + ting.gsx$maleri.$t;
+
+                    klon.querySelector(".tik").addEventListener("click", () => {
+                        console.log("hva fuck er der nu galt")
+                        visPopUp(ting);
+                    })
+
+                    container.appendChild(klon);
+                }
+            })
+
+        }
+
+        function visPopUp(ting) {
+
+
+            console.log("que pasa amigo");
+
+
+
+            detalje_popup.classList.remove("skjul");
+            detalje_popup.querySelector("button").addEventListener("click", () => detalje_popup.classList.add("skjul"));
+            detalje_popup.querySelector("h1").textContent = ting.gsx$maleri.$t;
+            detalje_popup.querySelector("p").textContent = ting.gsx$year.$t;
+            detalje_popup.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+            detalje_popup.querySelector("img").alt = "Billede af " + ting.gsx$maleri.$t;
+
+
+
+
+
+
+
+
+            //            console.log("fuccckk")
+            // klon.querySelector(".tik").addEventListener("click", () => {
+            // console.log("hva fuck er der nu galt")
+            // location.href = "picasso_test_detail.html?id=" + ting.gsx$id.$t;
+            // })
+            //
+
+
+        }
+
+    </script>
+</body>
+
+</html>

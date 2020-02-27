@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Marie-Therese</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Raleway&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        #logo {
+            background-image: url(logo/logo_final.svg);
+            background-size: contain;
+            height: 7rem;
+            width: 10rem;
+            cursor: pointer;
+            background-repeat: no-repeat;
+
+        }
+
+        .logo_container {
+            display: flex;
+            max-width: 1000px;
+            justify-content: flex-start;
+            margin: 0 auto;
+        }
+
+
+        header {
+            position: fixed;
+
+            display: flex;
+            align-items: center;
+
+            margin: 0;
+            top: 0;
+
+            width: 100%;
+            height: 7rem;
+            background-color: white;
+        }
+
+
+        .xtra_space {
+            height: 7rem;
+        }
+
+
+        p {
+
+            color: #606060;
+
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+            padding: 0.4rem;
+        }
+
+        .img p {
+            font-size: .6rem;
+            color: #9f9f9f;
+        }
+
+
+
+        h1 {
+            font-family: 'Caveat';
+            font-size: 2rem;
+            margin: 0;
+            padding: .4rem;
+            padding-left: 0;
+
+        }
+
+        #filter_desktop {
+            visibility: hidden;
+        }
+
+
+        nav {
+            padding-top: 4rem;
+            padding-right: 1rem;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+        }
+
+
+        /*-----------------------brugermenu----------------------------------*/
+
+        #burgerknap {
+            background-image: url(burger/burger.svg);
+            background-size: cover;
+            height: 2rem;
+            width: 2rem;
+            position: absolute;
+            z-index: 1;
+            right: 1rem;
+            top: 1.7rem;
+            margin-right: 1rem;
+
+
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        #filter_desktop {
+            visibility: hidden;
+        }
+
+
+
+        #filter_mobile {
+            background-color: whitesmoke;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            right: 0;
+        }
+
+        .open {
+            animation-name: open_kf;
+            animation-duration: 0.1s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes open_kf {
+            100% {
+                background-image: url(burger/cross.svg);
+            }
+        }
+
+        .closed {
+            animation-name: close_kf;
+            animation-duration: 0.1s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes close_kf {
+            0% {
+                background-image: url(burger/cross.svg);
+            }
+
+            100% {
+                background-image: url(burger/burger.svg);
+            }
+        }
+
+
+
+
+
+        /*-------------------------------MAIN (scroll)-----------------------*/
+        #scroll {
+            display: none;
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            width: 90%;
+            margin: auto;
+
+            max-width: 1000px;
+        }
+
+        #scroll_detail img {
+            height: 7rem;
+            scroll-snap-align: center;
+            padding-right: 0.747rem;
+
+            width: 20vw;
+            object-fit: cover;
+            object-position: 40% 25%;
+        }
+
+
+        #container {
+            margin: 0 auto;
+            padding: 0.5rem;
+        }
+
+        #detail_tik {
+            margin: 0 auto;
+
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        button {
+            font-family: 'Caveat';
+            font-size: 1.7rem;
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        button:hover {
+            color: indianred;
+        }
+
+
+        @media only screen and (min-width: 400px) {
+
+
+
+            .detail_wrap {
+                display: flex;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+
+            .detail_wrap div {
+                width: 50%;
+                padding-right: 1rem;
+            }
+
+
+            .detail_wrap h1 {
+                display: none;
+            }
+
+            h1 {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+        }
+
+        /*
+        @media only screen and (min-width: 800px) {
+        .detail_wrap div {
+
+        padding-right: 2rem;
+        }
+*/
+
+        }
+
+
+
+
+
+
+
+
+
+        @media only screen and (max-width: 400px) {
+
+
+            .xtra_space {
+                height: 7rem;
+            }
+
+
+
+
+            #filter_mobile {
+
+                background-color: whitesmoke;
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                right: 0;
+
+            }
+
+
+            img {
+                height: 147px;
+                object-position: 50% 0%;
+            }
+
+
+        }
+
+
+
+
+
+        @media only screen and (min-width: 400px) {
+
+            .xtra_space {
+                height: 7rem;
+            }
+
+
+
+            #scroll_detail img {
+                height: 7rem;
+                width: 7rem;
+
+            }
+
+
+            #filter_mobile {
+
+                background-color: whitesmoke;
+                position: fixed;
+                width: 47vw;
+                height: 100vh;
+                top: 0;
+                right: 0;
+
+            }
+
+
+            .logo_container {
+                align-content: flex-start;
+                width: 100%;
+            }
+
+
+            #logo {
+                height: 6.4rem;
+                width: 6.4rem;
+
+
+            }
+
+            img {
+
+                object-position: 50% 0%;
+            }
+
+            .data-container {
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .data-container article:nth-child(3n + 2) {
+                margin-top: 4vw;
+
+            }
+
+
+        }
+
+        /*        media query til big shit*/
+
+        @media only screen and (min-width: 800px) {
+
+            .xtra_space {
+                height: 0rem;
+            }
+
+
+            button {
+                font-size: 1.7rem;
+            }
+
+            #filter_desktop {
+                visibility: visible;
+                background-color: transparent;
+                display: flex;
+                flex-direction: row;
+                flex: none;
+            }
+
+            #burgerknap {
+                visibility: hidden;
+            }
+
+
+            header {
+                max-width: 1000px;
+                margin: 0 auto;
+                position: sticky;
+            }
+
+
+            #scroll_detail {}
+
+
+
+            .logo-container {
+
+                width: 1000px;
+                margin: 0 auto;
+
+            }
+
+
+
+            nav {
+                /*                background-color: transparent;*/
+                right: 1rem;
+                padding-top: .74rem;
+
+            }
+
+            img {
+                height: auto;
+                width: 80%;
+
+            }
+
+
+
+            .data-container article:nth-child(3n + 2) {
+                margin-top: 0vw;
+                /*                border: solid yellow 2px;*/
+            }
+
+            .data-container {
+
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .data-container article:nth-child(4n + 2) {
+                /*                border: solid darkred 2px;*/
+                margin-top: 4vw;
+            }
+
+            .data-container article:nth-child(4n + 4) {
+                /*                border: solid darkred 2px;*/
+                margin-top: 4vw;
+            }
+
+
+
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <div class="logo_container">
+            <a href="index.html">
+                <div id="logo"></div>
+            </a>
+        </div>
+
+
+
+        <h1></h1>
+
+        <div id="burgerknap">
+
+        </div>
+
+        <nav id="filter_mobile" class="hidden">
+
+
+            <button class="filter valgt" data-mus="alle"> <a href="galleri.html"> Galleri</a> </button>
+            <button class="filter" data-mus="olga"><a href="olga.html">Olga</a></button>
+            <button class="filter" data-mus="jacqueline"><a href="jacqueline.html">Jacqueline</a></button>
+            <button class="filter" data-mus="doramaar"><a href="dora.html"> Dora </a></button>
+            <button class="filter" data-mus="francoise"><a href="francoise.html"> Francoise </a></button>
+            <button class="filter underlined_link" data-mus="marietherese"><a href="marietherese.html">Marie-Therese</a></button>
+
+        </nav>
+
+        <div id="filter_desktop" class="hidden2">
+
+
+            <button class="filter valgt" data-mus="alle"> <a href="galleri.html"> Galleri</a> </button>
+            <button class="filter" data-mus="olga"><a href="olga.html">Olga</a></button>
+            <button class="filter" data-mus="jacqueline"><a href="jacqueline.html">Jacqueline</a></button>
+            <button class="filter" data-mus="doramaar"><a href="dora.html"> Dora </a></button>
+            <button class="filter" data-mus="francoise"><a href="francoise.html"> Francoise </a></button>
+            <button class="filter underlined_link" data-mus="marietherese"><a href="marietherese.html">Marie-Therese</a></button>
+
+        </div>
+
+    </header>
+
+    <div class="xtra_space">
+
+    </div>
+
+
+
+
+    <section id="container">
+        <article id="detail_tik">
+            <!--            <button id="detail_button">Tilbage</button>-->
+            <h1></h1>
+            <div class="detail_wrap">
+
+                <div> <img src="" alt=""></div>
+                <div>
+
+                    <p class="year"></p>
+                    <p class="beskrivelse"></p>
+                    <p class="musetxt"></p>
+                    <p class="copyright"></p>
+                </div>
+            </div>
+
+
+        </article>
+    </section>
+
+
+    <template id="template_scroll">
+        <article id="scroll_detail" class="each_popup">
+
+            <img id="image_scroll" src="" alt="">
+
+        </article>
+    </template>
+
+
+
+    <div id="scroll"></div>
+
+
+    <footer>
+
+        <p id="footer_txt">
+
+        </p>
+
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", startUp);
+
+        //        const urlParams = new URLSearchParams(window.location.search);
+        const id = "marietherese";
+
+        let personer = [];
+        const googleData = "https://spreadsheets.google.com/feeds/list/13kjSiYnNHiUNoKXbuB1oO7nbL1k3Zawd7irhZpyQuBQ/od6/public/values?alt=json";
+        const containerScroll = document.querySelector("#scroll");
+        let detaljeScroll = document.querySelector("#container");
+
+        function startUp() {
+            console.log("FUCK")
+            hentData();
+            backKnap();
+        }
+
+        async function hentData() {
+            console.log("fuck u");
+            const response = await fetch(googleData);
+            console.log(response);
+            personer = await response.json();
+            console.log(personer);
+            visTing();
+
+        }
+
+
+        function backKnap() {
+            document.querySelector("#burgerknap").addEventListener("click", clickMenu);
+            //            document.querySelector("#detail_button").addEventListener("click", goBack)
+        }
+
+        //        function goBack() {
+        //            history.back();
+        //        }
+
+
+        function clickMenu() {
+            document.querySelector("#filter_mobile").classList.toggle("hidden");
+
+            if (document.querySelector("#burgerknap").classList.contains("open")) {
+                document.querySelector("#burgerknap").classList = "closed";
+            } else {
+                document.querySelector("#burgerknap").classList = "open";
+            }
+        }
+
+
+
+        function visTing() {
+            console.log("VIS ting");
+
+            const container = document.querySelector("#container");
+            const muserTemplateScroll = document.querySelector("#template_scroll");
+
+
+            personer.feed.entry.forEach(ting => {
+
+                if (ting.gsx$kategori.$t == id) {
+
+
+                    containerScroll.style.display = "flex";
+                    const klonScroll = muserTemplateScroll.cloneNode(true).content;
+                    klonScroll.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+                    detaljeScroll.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+
+
+
+                    container.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+                    container.querySelector("img").alt = "Billede af " + ting.gsx$maleri.$t;
+
+                    container.querySelector("h1").textContent = ting.gsx$maleri.$t;
+                    container.querySelector(".musetxt").textContent = ting.gsx$musetxt.$t;
+                    container.querySelector(".beskrivelse").textContent = ting.gsx$beskrivelse.$t;
+                    container.querySelector(".year").textContent = ting.gsx$year.$t;
+                    container.querySelector(".copyright").textContent = ting.gsx$copyright.$t;
+
+                    klonScroll.querySelector(".each_popup").addEventListener("click", function() {
+
+                        container.querySelector("img").src = "imgs/" + ting.gsx$billede.$t + ".jpg";
+                        container.querySelector("img").alt = "Billede af " + ting.gsx$maleri.$t;
+
+                        container.querySelector("h1").textContent = ting.gsx$maleri.$t;
+                        container.querySelector(".year").textContent = ting.gsx$year.$t;
+                        container.querySelector(".beskrivelse").textContent = ting.gsx$beskrivelse.$t;
+                        container.querySelector(".copyright").textContent = ting.gsx$copyright.$t;
+                        //                    visMuseBillede();
+
+                    });
+
+                    containerScroll.appendChild(klonScroll);
+
+                }
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
